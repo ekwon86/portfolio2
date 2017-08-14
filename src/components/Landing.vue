@@ -1,6 +1,6 @@
 <template>
     <div class="parallax-bg">
-        <div class="overlay">
+        <div class="overlay content-a">
             <div class="name-container">
                 <transition name="slide-fade-top">
                     <img src="../assets/logo.png" class="eklogo" alt="logo" v-if="showLanding">
@@ -45,7 +45,7 @@ export default {
         background-image: url("../assets/bg.png");
         height: 100vh;
         background-attachment: fixed;
-        background-position: center;
+        background-position: 50% 50%;
         background-repeat: no-repeat;
         background-size: cover;
         .overlay {
@@ -55,9 +55,14 @@ export default {
             background-color: rgba(222, 184, 175, 0.4);
         }
     }
+    .content-a {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
     .eklogo {
-        height: 15em;
-        width: 15em;
+        height: 12em;
+        width: 12em;
     }
 
     .arrow-down{

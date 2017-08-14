@@ -105,8 +105,7 @@
         text-align: center;
         min-height: 80vh;
         height: auto;
-        background-image: url("../assets/bg2.png");
-        background-attachment: fixed;
+        background: url("../assets/bg2.png") 0px 0px fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

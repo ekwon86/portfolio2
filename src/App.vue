@@ -1,10 +1,11 @@
 <template>
   <div id="app">
      <landing></landing>
-     <!--<navbar></navbar>-->
+     <!--<navbar :class="{ isSticky: stickyNav }"></navbar>-->
      <about></about>
-     <skills :showSkills="showSkills"></skills>
+     <skills></skills>
      <experience></experience>
+     <bottom></bottom>
   </div>
 </template>
 
@@ -14,11 +15,13 @@ import About from'./components/About.vue';
 import Navbar from './components/Navbar.vue';
 import Skills from './components/Skills.vue';
 import Experience from './components/Experience.vue';
+import Footer from './components/Footer.vue';
 export default {
     name: 'app',
     data () {
           return {
-              showSkills: false
+              showSkills: false,
+              stickyNav: false
           }
     },
     components: {
@@ -26,19 +29,24 @@ export default {
         'about': About,
         'navbar': Navbar,
         'skills': Skills,
-        'experience': Experience
+        'experience': Experience,
+        'bottom': Footer
     },
     methods:{
         checkScroll(){
-            let scrollPosition = document.getElementById('skills');
+            let scrollPosition = document.getElementById('navbar');
             let top = scrollPosition.getBoundingClientRect().top;
-            if (top <= 400){
-                this.showSkills = true;
+            console.log(top);
+            if (top <= 0){
+                this.stickyNav = true;
+            }
+            else if(top >= 0) {
+                this.stickyNav = false;
             }
         }
     },
     created: function(){
-        window.addEventListener('scroll', this.checkScroll);
+//        window.addEventListener('scroll', this.checkScroll);
     }
 }
 </script>
@@ -59,5 +67,10 @@ export default {
         text-transform: uppercase;
         font-size: 2em;
         letter-spacing: 0.25vw;
+    }
+    .isSticky {
+        position: fixed;
+        top: 0;
+        background-color: rgba(0,0,0,0.4);
     }
 </style>

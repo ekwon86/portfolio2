@@ -2,7 +2,9 @@
     <div class="experience-section" id="experience">
         <h1 class="headings">Experience</h1>
         <div class="experience-master">
-            <div class="experience-left experience-container"></div>
+            <div class="experience-left experience-container">
+
+            </div>
             <div class="experience-right experience-container"></div>
         </div>
 
