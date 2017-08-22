@@ -9,11 +9,13 @@
                     <p class="name" v-if="showLanding">Eugene Kwon</p>
                 </transition>
                 <transition name="slide-fade-bottom">
-                    <p class="name-subtext" v-if="showLanding">Front-End Web Developer based in the Orange County Area</p>
+                    <p class="name-subtext" v-if="showLanding">Front-End Web Developer</p>
+                </transition>
+                <transition name="slide-fade-bottom">
+                    <div v-if="showLanding" class="start-btn">Start</div>
                 </transition>
             </div>
-            
-            <div class="arrow-down" v-on:click="arrowClick"></div>
+            <!--<div class="arrow-down" v-on:click="arrowClick"></div>-->
         </div>
     </div>
 </template>
@@ -43,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
     #particles-js {
-        background-color: #36beeb;
+        background-color: #2f93ba;
     }
     .parallax-bg {
         /*background-image: url("../assets/bg.png");*/
@@ -58,6 +60,7 @@ export default {
             width: 100%;
             background-color: rgba(255,255,255,0.3);
             padding: 15%;
+            z-index: 999;
         }
     }
     .content-a {
@@ -90,6 +93,23 @@ export default {
         }
     }
 
+    .start-btn {
+        color: white;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        padding: 10px 50px;
+        border: 5px solid white;
+        display: inline-block;
+        margin-top: 100px;
+        transition: 0.3s;
+        &:hover {
+            cursor: pointer;
+            background-color: white;
+            color: #36beeb;
+            font-weight: 300;
+        }
+    }
 
     @-webkit-keyframes bounce-fade {
         0%   { opacity: 0; bottom: 70px; }
