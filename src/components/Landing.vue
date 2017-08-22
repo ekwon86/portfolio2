@@ -1,5 +1,5 @@
 <template>
-    <div class="parallax-bg">
+    <div class="parallax-bg" id="particles-js">
         <div class="overlay content-a">
             <div class="name-container">
                 <transition name="slide-fade-top">
@@ -12,6 +12,7 @@
                     <p class="name-subtext" v-if="showLanding">Front-End Web Developer based in the Orange County Area</p>
                 </transition>
             </div>
+            
             <div class="arrow-down" v-on:click="arrowClick"></div>
         </div>
     </div>
@@ -41,8 +42,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    #particles-js {
+        background-color: #36beeb;
+    }
     .parallax-bg {
-        background-image: url("../assets/bg.png");
+        /*background-image: url("../assets/bg.png");*/
         height: 100vh;
         background-attachment: fixed;
         background-position: 50% 50%;
@@ -50,9 +54,10 @@ export default {
         background-size: cover;
         .overlay {
             height: 100%;
-            position: relative;
+            position: absolute;
             width: 100%;
-            background-color: rgba(222, 184, 175, 0.4);
+            background-color: rgba(255,255,255,0.3);
+            padding: 15%;
         }
     }
     .content-a {
@@ -62,8 +67,10 @@ export default {
     }
     .eklogo {
         height: 12em;
+        position: relative;
         width: 12em;
     }
+
 
     .arrow-down{
         position: absolute;
@@ -103,11 +110,10 @@ export default {
 
     .name-container {
         width: 100%;
-        text-align: center;
         position: relative;
-        top: 40%;
+        top: 50%;
         transform: translate(0,-50%);
-
+        text-align: center;
         .name {
             font-family: 'Oswald', sans-serif;
             font-size: 6em;

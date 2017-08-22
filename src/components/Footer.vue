@@ -45,7 +45,9 @@
         text-align: center;
         background-image: url("../assets/bg.png");
         background-position: bottom;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
         .overlay {
             height: 100%;
             position: relative;

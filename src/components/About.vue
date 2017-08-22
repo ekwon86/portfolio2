@@ -19,14 +19,10 @@
 </script>
 
 <style lang="scss" scoped>
-    .img-circle {
-        border-radius: 999em;
-    }
     .about-section {
-        padding: 5% 18%;
-        min-height: 50vh;
+        /*padding: 5% 18%;*/
         position: relative;
-        height: auto;
+        height: 50vh;
         width: 100%;
         text-align: center;
     }
@@ -34,5 +30,11 @@
         line-height: 5vh;
         font-weight: lighter;
         text-align: center;
+    }
+    .about-container {
+        position: relative;
+        padding: 0 15vw;
+        top: 50%;
+        transform:translate(0,-50%);
     }
 </style>
