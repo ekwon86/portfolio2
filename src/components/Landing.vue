@@ -45,7 +45,10 @@ export default {
 
 <style lang="scss" scoped>
     #particles-js {
-        background-color: #2f93ba;
+        background-color: #393939;
+        position: fixed;
+        z-index: -999;
+        width: 100vw;
     }
     .parallax-bg {
         /*background-image: url("../assets/bg.png");*/
@@ -58,7 +61,7 @@ export default {
             height: 100%;
             position: absolute;
             width: 100%;
-            background-color: rgba(255,255,255,0.3);
+            background-color: rgba(53, 53, 53, 0.3);
             padding: 15%;
             z-index: 999;
         }
@@ -97,12 +100,13 @@ export default {
         color: white;
         font-size: 2em;
         text-transform: uppercase;
-        letter-spacing: 5px;
+        letter-spacing: 10px;
         padding: 10px 50px;
         border: 5px solid white;
         display: inline-block;
         margin-top: 100px;
         transition: 0.3s;
+        font-family: 'Oswald', sans-serif;
         &:hover {
             cursor: pointer;
             background-color: white;
@@ -147,7 +151,7 @@ export default {
         }
         .name-subtext {
             color: rgba(255,255,255, 1);
-            font-size: 1.5em;
+            font-size: 2.5em;
             letter-spacing: 0.1em;
         }
     }

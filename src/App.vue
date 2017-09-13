@@ -4,7 +4,7 @@
      <!--<navbar :class="{ isSticky: stickyNav }"></navbar>-->
      <about></about>
      <skills></skills>
-     <experience></experience>
+     <!--<experience></experience>-->
      <bottom></bottom>
   </div>
 </template>

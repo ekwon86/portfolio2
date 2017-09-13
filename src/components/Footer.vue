@@ -38,8 +38,8 @@
 <style lang="scss" scoped>
     $hovercolor: #32a8d0;
     #footer {
-        /*position: fixed;*/
-        /*bottom: 0px;*/
+        position: relative;
+        top: 100vh;
         width: 100%;
         height: 25vh;
         text-align: center;

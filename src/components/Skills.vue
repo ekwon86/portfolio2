@@ -6,15 +6,14 @@
                 <transition name="slide-fade-left">
                     <div class="col-xs-12 col-md-4 skills-main">
                         <div class="skills-sub">
-                            <img src="../assets/computer.png" class="skills-icons" alt="frontend">
                             <p class="sub-headings skills-sub-headings">Front-End</p>
-                            <div v-for="skill in frontEnd" class="skill-indiv-container" v-on:mouseover="mouseOverSkill">
-                                <div class="icon-container">
-                                    <i :class="'skill-icon devicon-' + skill.icon" data-toggle="tooltip" :title="skill.lang"></i>
+                            <div v-for="skill in frontEnd" class="skills-holder">
+                                <div class="skill-holder-icon-holder">
+                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
-                                <div class="percentage-container" style="text-align: right;">
-                                    <div class="percentage" :style="'width:' + skill.percentage + '%'">
-                                        <!--<span class="percentage-text">{{ skill.percentage }}%</span>-->
+                                <div class="skill-holder-progress-bar-holder">
+                                    <div class="skill-level-bar">
+                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
                                     </div>
                                 </div>
                             </div>
@@ -24,14 +23,15 @@
                 <transition name="slide-fade-bottom">
                     <div class="col-xs-12 col-md-4 skills-main">
                         <div class="skills-sub">
-                            <img src="../assets/hierarchy-structure.png"  class="skills-icons" alt="backend">
                             <p class="sub-headings skills-sub-headings">Back-End</p>
-                            <div v-for="skill in backEnd" class="skill-indiv-container">
-                                <div class="icon-container">
-                                    <i :class="'skill-icon devicon-' + skill.icon" data-toggle="tooltip" :title="skill.lang"></i>
+                            <div v-for="skill in backEnd" class="skills-holder">
+                                <div class="skill-holder-icon-holder">
+                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
-                                <div class="percentage-container">
-                                    <div class="percentage" :style="'width:' + skill.percentage + '%'"></div>
+                                <div class="skill-holder-progress-bar-holder">
+                                    <div class="skill-level-bar">
+                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -40,14 +40,15 @@
                 <transition name="slide-fade-right">
                     <div class="col-xs-12 col-md-4 skills-main">
                         <div class="skills-sub">
-                            <img src="../assets/edit-tools.png" class="skills-icons" alt="tools">
                             <p class="sub-headings skills-sub-headings">Additional</p>
-                            <div v-for="skill in misc" class="skill-indiv-container">
-                                <div class="icon-container">
-                                    <i :class="'skill-icon devicon-' + skill.icon" data-toggle="tooltip" :title="skill.skill"></i>
+                            <div v-for="skill in misc" class="skills-holder">
+                                <div class="skill-holder-icon-holder">
+                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
-                                <div class="percentage-container">
-                                    <div class="percentage" :style="'width:' + skill.percentage + '%'"></div>
+                                <div class="skill-holder-progress-bar-holder">
+                                    <div class="skill-level-bar">
+                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -64,39 +65,36 @@
         data(){
             return {
                 frontEnd: [
-                    { lang: 'HTML', icon: 'html5-plain', percentage: '90' },
-                    { lang: 'CSS', icon: 'css3-plain', percentage: '100'},
-                    { lang: 'Javascript', icon: 'javascript-plain', percentage: '90'},
-                    { lang: 'Vue', icon: 'vuejs-plain', percentage: '90' },
-                    { lang: 'React', icon: 'react-original', percentage: '75' },
-                    { lang: 'Angular', icon: 'angularjs-plain', percentage: '60' },
-                    { lang: 'jQuery', icon: 'jquery-plain', percentage: '90' },
-                    { lang: 'Bootstrap', icon: 'bootstrap-plain', percentage: '100' },
-                    { lang: 'Sass', icon: 'sass-original', percentage: '100' },
-                    { lang: 'Less', icon: 'less-plain-wordmark', percentage: '100'},
+                    { lang: 'HTML', icon: 'html5-plain colored', percentage: '100' },
+                    { lang: 'CSS', icon: 'css3-plain colored', percentage: '100'},
+                    { lang: 'Javascript', icon: 'javascript-plain colored', percentage: '90'},
+                    { lang: 'Vue', icon: 'vuejs-plain colored', percentage: '90' },
+                    { lang: 'React', icon: 'react-original colored', percentage: '75' },
+                    { lang: 'Angular', icon: 'angularjs-plain colored', percentage: '75' },
+                    { lang: 'jQuery', icon: 'jquery-plain colored', percentage: '90' },
+                    { lang: 'Bootstrap', icon: 'bootstrap-plain colored', percentage: '100' },
+                    { lang: 'Typescript', icon: 'typescript-plain colored', percentage: '75'},
+                    { lang: 'Sass', icon: 'sass-original colored', percentage: '100' }
                 ],
                 backEnd: [
-                    { lang: 'NodeJS', icon: 'nodejs-plain', percentage: '60' },
-                    { lang: 'PHP', icon: 'php-plain', percentage: '60' },
-                    { lang: 'Express', icon: 'express-original', percentage: '60' },
-                    { lang: 'MongoDB', icon: 'mongodb-plain', percentage: '60' },
-                    { lang: 'MySQL', icon: 'mysql-plain', percentage: '60'}
+                    { lang: 'NodeJS', icon: 'nodejs-plain colored', percentage: '75' },
+                    { lang: 'Express', icon: 'express-original colored', percentage: '75' },
+                    { lang: 'MongoDB', icon: 'mongodb-plain colored', percentage: '75' },
+                    { lang: 'PHP', icon: 'php-plain colored', percentage: '60' },
+                    { lang: 'MySQL', icon: 'mysql-plain colored', percentage: '50'}
                 ],
                 misc: [
-                    { skill: 'Version Management (Git)', icon: 'git-plain', percentage: '70' },
-                    { skill: 'Babel', icon: 'babel-plain', percentage: '60' },
-                    { skill: 'Webpack', icon: 'webpack-plain', percentage: '60' },
-                    { skill: 'Chrome Dev Tools', icon: 'chrome-plain', percentage: '70' },
-                    { skill: 'Grunt', icon: 'grunt-line', percentage: '60' },
-                    { skill: 'Gulp', icon: 'gulp-plain',  percentage: '60' },
-                    { skill: 'Bower', icon: 'bower-plain', percentage: '60' },
-                    { skill: 'Heroku', icon: 'heroku-original',  percentage: '60' },
-                    { skill: 'Atom', icon: 'atom-original',  percentage: '90' },
-                    { skill: 'Webstorm', icon: 'webstorm-plain',  percentage: '100' },
-                    { skill: 'PHPStorm', icon: 'phpstorm-plain', percentage: '100' },
-                    { lang: 'Wordpress', icon: 'wordpress-plain',percentage: '60' },
-                    { skill: 'Photoshop', icon: 'photoshop-plain', percentage: '60'},
-                    { skill: 'Illustrator', icon: 'illustrator-plain', percentage: '60' }
+                    { skill: 'Version Management (Git)', icon: 'git-plain colored', percentage: '70' },
+                    { skill: 'Heroku', icon: 'heroku-original colored',  percentage: '60' },
+                    { skill: 'Webpack', icon: 'webpack-plain colored', percentage: '60' },
+                    { skill: 'Grunt', icon: 'grunt-line colored', percentage: '60' },
+                    { skill: 'Gulp', icon: 'gulp-plain colored',  percentage: '60' },
+                    { skill: 'Bower', icon: 'bower-plain colored', percentage: '60' },
+                    { skill: 'Atom', icon: 'atom-original colored',  percentage: '100' },
+                    { skill: 'Webstorm', icon: 'webstorm-plain colored',  percentage: '100' },
+                    { lang: 'Wordpress', icon: 'wordpress-plain colored',percentage: '60' },
+                    { skill: 'Photoshop', icon: 'photoshop-plain colored', percentage: '60'},
+                    { skill: 'Illustrator', icon: 'illustrator-plain colored', percentage: '60' }
                 ]
             }
         },
@@ -115,8 +113,9 @@
         padding: 5% !important;
     }
     .skills-section {
+        position: relative;
+        top: 100vh;
         text-align: center;
-        min-height: 80vh;
         height: auto;
         background: url("../assets/bg7.png") 0px 0px fixed;
         background-position: center;
@@ -131,43 +130,33 @@
         }
     }
     .skills-icons {
-        width: 75px;
+        width: 65px;
     }
-
-    .skill-indiv-container {
+    .skills-holder {
+        margin: 5px 0;
         width: 100%;
-        margin: 10px 0;
-        height: 50px;
-        border: 1px solid rgba(0,0,0,0.05);
-        transition: 0.2s ease;
-        .icon-container {
-            height: 100%;
-            width: 20%;
+        padding: 5px 10px 5px 5px;
+        height: 60px;
+        .skill-holder-icon-holder {
+            width: 25%;
             float: left;
-            padding: 10px;
-            .skill-icon {
-                font-size: 30px;
-            }
-        }
-        .percentage-container {
-            width: 80%;
-            float: right;
             height: 100%;
-            text-align: left;
-            padding: 10px;
-            .percentage {
-                border: 1px solid rgba(0, 214, 70, 1);
-                height: 10px;
-                background-color: rgba(0, 214, 70, 1);
-                position: relative;
-                top: 50%;
-                transform: translate(0,-50%);
+            padding: 3px;
+            .devicons {
+                font-size: 40px;
             }
         }
-        &:hover {
-            background-color: rgba(0,0,0,0.5);
-            * {
-                color: white;
+        .skill-holder-progress-bar-holder {
+            width: 75%;
+            float: right; height: 100%;
+            .skill-level-bar {
+                background-color: rgba(0,0,0,0.2);
+                height: 20px;
+                margin: 4% 0;
+                .level-bar {
+                    height: 100%;
+                    background-color: rgba(117, 225, 90, 0.9);
+                }
             }
         }
     }
@@ -194,10 +183,9 @@
     }
 
     .skills-sub-headings {
-        margin: 5% 0;
+        margin: 1% 0;
         padding-bottom: 2%;
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-
 
 </style>
