@@ -1,10 +1,10 @@
 <template>
   <div id="app">
      <landing></landing>
-     <!--<navbar :class="{ isSticky: stickyNav }"></navbar>-->
+     <navbar></navbar>
      <about></about>
+     <experience :expScrolledTo="expScrolledTo"></experience>
      <skills></skills>
-     <!--<experience></experience>-->
      <bottom></bottom>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
     data () {
           return {
               showSkills: false,
-              stickyNav: false
+              expScrolledTo: false
           }
     },
     components: {
@@ -34,19 +34,19 @@ export default {
     },
     methods:{
         checkScroll(){
-            let scrollPosition = document.getElementById('navbar');
-            let top = scrollPosition.getBoundingClientRect().top;
-            console.log(top);
-            if (top <= 0){
-                this.stickyNav = true;
+            const experienceSection = document.getElementById('experience');
+            const topOfExpSection = experienceSection.getBoundingClientRect().top;
+
+            if (topOfExpSection <= 450){
+                this.expScrolledTo = true;
             }
-            else if(top >= 0) {
-                this.stickyNav = false;
-            }
-        }
+
+
+        },
+
     },
     created: function(){
-//        window.addEventListener('scroll', this.checkScroll);
+        window.addEventListener('scroll', this.checkScroll);
     }
 }
 </script>
@@ -68,9 +68,6 @@ export default {
         font-size: 2em;
         letter-spacing: 0.25vw;
     }
-    .isSticky {
-        position: fixed;
-        top: 0;
-        background-color: rgba(0,0,0,0.4);
-    }
+
+
 </style>

@@ -2,6 +2,7 @@
     <div class="skills-section" id="skills">
         <div class="overlay">
             <h1 class="headings skills-heading">skills</h1>
+            <!--<button type="button" v-on:click="animateBorder">CLICK</button>-->
             <div class="row skills-container">
                 <transition name="slide-fade-left">
                     <div class="col-xs-12 col-md-4 skills-main">
@@ -13,6 +14,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
+                                        <!--<div class="level-bar"></div>-->
                                         <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
                                     </div>
                                 </div>
@@ -30,6 +32,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
+                                        <!--<div class="level-bar"></div>-->
                                         <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
                                     </div>
                                 </div>
@@ -47,6 +50,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
+                                        <!--<div class="level-bar"></div>-->
                                         <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
                                     </div>
                                 </div>
@@ -95,13 +99,32 @@
                     { lang: 'Wordpress', icon: 'wordpress-plain colored',percentage: '60' },
                     { skill: 'Photoshop', icon: 'photoshop-plain colored', percentage: '60'},
                     { skill: 'Illustrator', icon: 'illustrator-plain colored', percentage: '60' }
-                ]
+                ],
+                percentageArray: []
             }
         },
         methods: {
-            mouseOverSkill(e){
-                console.log(e.target);
+            addToArray(array){
+                for (let i = 0; i < array.length; i++){
+                    this.percentageArray.push(array[i].percentage);
+                }
+            },
+            animateBorder(){
+                let skillBar = document.getElementsByClassName('level-bar');
+                let currentPercentage;
+
+                for (let i = 0; i < skillBar.length; i++){
+                    for (let j = i; j < this.percentageArray.length; j++){
+                        console.log('J is currently ' + j);
+                    }
+                    skillBar[i].setAttribute("style", "width:" + currentPercentage + "%;");
+                }
             }
+        },
+        mounted(){
+            this.addToArray(this.frontEnd);
+            this.addToArray(this.backEnd);
+            this.addToArray(this.misc);
         }
     }
 </script>
@@ -113,14 +136,15 @@
         padding: 5% !important;
     }
     .skills-section {
-        position: relative;
-        top: 100vh;
         text-align: center;
         height: auto;
         background: url("../assets/bg7.png") 0px 0px fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        .skills-heading {
+            color: #000000;
+        }
         .overlay {
             height: 100%;
             width: 100%;
@@ -138,12 +162,12 @@
         padding: 5px 10px 5px 5px;
         height: 60px;
         .skill-holder-icon-holder {
-            width: 25%;
+            width: 20%;
             float: left;
             height: 100%;
-            padding: 3px;
+            padding: 10px;
             .devicons {
-                font-size: 40px;
+                font-size: 30px;
             }
         }
         .skill-holder-progress-bar-holder {
@@ -154,8 +178,10 @@
                 height: 20px;
                 margin: 4% 0;
                 .level-bar {
+                    width: 0;
                     height: 100%;
                     background-color: rgba(117, 225, 90, 0.9);
+                    transition: 0.5s;
                 }
             }
         }
@@ -163,7 +189,6 @@
 
     .skills-container {
         height: auto;
-        margin-top: 3%;
         .skills-main {
             height: auto;
             text-align: center;

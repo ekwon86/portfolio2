@@ -1,5 +1,6 @@
 <template>
-    <div class="parallax-bg" id="particles-js">
+    <div id="Landing">
+        <div class="parallax-bg" id="particles-js"></div>
         <div class="overlay content-a">
             <div class="name-container">
                 <transition name="slide-fade-top">
@@ -11,11 +12,7 @@
                 <transition name="slide-fade-bottom">
                     <p class="name-subtext" v-if="showLanding">Front-End Web Developer</p>
                 </transition>
-                <transition name="slide-fade-bottom">
-                    <div v-if="showLanding" class="start-btn">Start</div>
-                </transition>
             </div>
-            <!--<div class="arrow-down" v-on:click="arrowClick"></div>-->
         </div>
     </div>
 </template>
@@ -44,19 +41,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    #Landing {
+        height: 100vh;
+        width: 100%;
+    }
     #particles-js {
         background-color: #393939;
         position: fixed;
-        z-index: -999;
-        width: 100vw;
+        z-index: -100;
+        width: 100%;
     }
     .parallax-bg {
-        /*background-image: url("../assets/bg.png");*/
         height: 100vh;
-        background-attachment: fixed;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
         .overlay {
             height: 100%;
             position: absolute;
@@ -67,6 +66,10 @@ export default {
         }
     }
     .content-a {
+        position: fixed;
+        z-index: -100;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -78,59 +81,7 @@ export default {
     }
 
 
-    .arrow-down{
-        position: absolute;
-        bottom: 110px;
-        left: 50%;
-        margin-left: -10px;
-        width: 21px;
-        height: 29px;
-        background: url(../assets/arrow-down.png) no-repeat center center;
-        display: block;
-        -webkit-animation: bounce-fade 1.2s infinite;
-        -moz-animation:    bounce-fade 1.2s infinite;
-        -o-animation:      bounce-fade 1.2s infinite;
-        animation:        bounce-fade 1.2s infinite;
-        &:hover {
-            cursor: pointer;
-        }
-    }
 
-    .start-btn {
-        color: white;
-        font-size: 2em;
-        text-transform: uppercase;
-        letter-spacing: 10px;
-        padding: 10px 50px;
-        border: 5px solid white;
-        display: inline-block;
-        margin-top: 100px;
-        transition: 0.3s;
-        font-family: 'Oswald', sans-serif;
-        &:hover {
-            cursor: pointer;
-            background-color: white;
-            color: #36beeb;
-            font-weight: 300;
-        }
-    }
-
-    @-webkit-keyframes bounce-fade {
-        0%   { opacity: 0; bottom: 70px; }
-        100% { opacity: 1; bottom: 35px; }
-    }
-    @-moz-keyframes bounce-fade {
-        0%   { opacity: 0; bottom: 70px; }
-        100% { opacity: 1; bottom: 35px; }
-    }
-    @-o-keyframes bounce-fade {
-        0%   { opacity: 0; bottom:70px; }
-        100% { opacity: 1; bottom: 35px; }
-    }
-    @keyframes bounce-fade {
-        0%   { opacity: 0; bottom: 70px; }
-        100% { opacity: 1; bottom: 35px; }
-    }
 
     .name-container {
         width: 100%;

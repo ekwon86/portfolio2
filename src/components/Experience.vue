@@ -1,17 +1,44 @@
 <template>
-    <div class="experience-section" id="experience">
-        <div class="overlay">
-            <h1 class="headings experience-heading">Experience</h1>
-            <div class="experience-master">
-                <div class="experience-left experience-container">
-                    <div class="experience">
-                        <h3>2011 - 2013</h3>
-                        <h4>CJ PRO</h4>
-                        <h4>Superintendent / Project Manager</h4>
-                    </div>
+    <div class="experience-section text-center" id="experience">
+        <div class="background-split">
+            <div class="overlay"></div>
+            <div class="background-split-left splits text-right">
+                <h4 class="sub-headings edu-heading">education</h4>
+                <div class="edu-exp-sub-holders">
+                    <transition name="slide-fade-right">
+                        <div v-if="expScrolledTo">
+                            <h4 class="edu-exp-sub-headings">Learning Fuze Web Development Bootcamp</h4>
+                            <p>March 2016 - June 2017</p>
+                            <p>Over 700 hours of full-immersion software development</p>
+                            <p>Curriculum Highlights: HTML5, CSS3, Javascript, jQuery, AngularJS, PHP, MySQL, Firebase, Version Management</p>
+                        </div>
+                    </transition>
                 </div>
-                <div class="experience-right experience-container">
-                    <div class="experience"></div>
+                <div class="edu-exp-sub-holders">
+                    <transition name="slide-fade-right">
+                        <div v-if="expScrolledTo">
+                            <h4 class="edu-exp-sub-headings">California State University, Fullerton</h4>
+                            <em>Bachelor of Arts, International Business</em><br/>
+                            <em>Concentration in Japanese</em>
+                            <p>2004-2010</p>
+                        </div>
+                    </transition>
+                </div>
+            </div>
+            <div class="background-split-right splits text-left">
+                <h4 class="sub-headings exp-heading">experience</h4>
+                <div class="edu-exp-sub-holders">
+                    <transition name="slide-fade-left">
+                        <div v-if="expScrolledTo">
+                            <h4 class="edu-exp-sub-headings">Laser App Software / iPipeline</h4>
+                            <em>Front End Developer&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Associate, UI Developer</em>
+                            <p><strong>September 2016 to Present</strong></p>
+                            <p>Utilized the VueJS library to create a user interface for an account opening process integration system.</p>
+                            <p>Created internal office tool utilizing NodeJS to automate onboarding process for new clients</p>
+                            <p>Designed layout for the annual conference website utilizing the Wordpress content management system</p>
+                            <p>Responsible for designing micro sites</p>
+                        </div>
+                    </transition>
                 </div>
             </div>
         </div>
@@ -20,56 +47,144 @@
 
 <script>
     export default {
+        props: ['expScrolledTo'],
         data() {
             return {
-
+            }
+        },
+        methods: {
+            slideEduLeft(){
+                this.slideEdu = true;
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .experience {
-        border: 1px solid black;
-        min-height: 50px;
-        height: auto;
+    .slide-fade-right-enter-active {
+        transition: all .3s ease;
     }
-    /*.experience-heading {*/
-        /*color: white;*/
-    /*}*/
-    .experience-master {
-        margin-top: 5vh;
+    .slide-fade-right-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
-    .experience-section {
-        text-align: center;
-        min-height: 80vh;
-        width: 100%;
-        height: auto;
-        padding: 5% 10%;
-        /*background-image: url("../assets/bg4.png");*/
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;
+    .slide-fade-right-enter, .slide-fade-right-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translateX(-100px);
+        opacity: 0;
     }
-    .experience-container {
-        height: 50vh;
+
+    .slide-fade-left-enter-active {
+        transition: all .3s ease;
     }
-    .experience-left {
-        border: 1px solid rgba(0,0,0,0.25);
-        width: 50%;
-        float: left;
-        padding: 3%;
-        .experience {
-            text-align: right;
+    .slide-fade-left-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-left-enter, .slide-fade-left-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    #experience {
+        z-index: 999;
+        .background-split {
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            background-color: white;
+            z-index: -999;
+            background:url('../assets/okOf0aq.png') 0px 0px fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .overlay {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(255, 81, 79, 0.84);
+                z-index: -1
+            }
+            .edu-exp-sub-holders {
+                min-height: 15vh;
+                height: auto;
+                margin-bottom: 5%;
+            }
+            .background-split-left {
+                height: 100%;
+                width: 50%;
+                float: left;
+                background-color: rgba(14, 255, 243, 0.75);
+                color: white;
+                padding-right: 2%;
+                /*box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);*/
+                padding-left: 5%;
+                * {
+                    color: white;
+                }
+            }
+            .background-split-right {
+                height: 100%;
+                width: 50%;
+                float: right;
+                padding-right: 5%;
+                padding-left: 2%;
+                * {
+                    color: white;
+                }
+            }
+            .sub-headings {
+                letter-spacing: 0.5vw;
+                font-family: 'Oswald', sans-serif;
+                text-transform: uppercase;
+                font-size: 3em;
+                padding-bottom: 15px;
+                margin-bottom: 50px;
+            }
+            .edu-heading {
+                border-bottom: 1px solid white;
+            }
+            .exp-heading {
+                border-bottom: 1px solid white;
+            }
         }
-    }
-    .experience-right {
-        border: 1px solid rgba(0,0,0,0.25);
-        width: 50%;
-        float: right;
-        padding: 3%;
-        .experience {
-            text-align: left;
+        .splits {
+            padding-top: 10%;
+            padding-bottom: 5%;
+            .edu-exp-sub-headings {
+                font-weight: bold;
+            }
         }
+        .experience-container {
+            height: 80%;
+            padding: 0 5%;
+            .experience-education-container {
+                margin-top: 3%;
+                height: 100%;
+                border: 1px solid black;
+                .sub-headings {
+                    text-transform: uppercase;
+                    letter-spacing: 0.5vw;
+                    font-size: 1.5em;
+                }
+                .experience-sub-container {
+                    width: 50%;
+                    height: 100%;
+                    float: left;
+                    text-align: right;
+                    padding: 1%;
+                    border-right: 1px solid black;
+                }
+                .education-sub-container {
+                    width: 50%;
+                    height: 100%;
+                    float: right;
+                    text-align: left;
+                    padding: 1%;
+                }
+            }
+        }
+
     }
 </style>
