@@ -81,20 +81,22 @@ export default {
     }
 
 
-
-
     .name-container {
         width: 100%;
         position: relative;
         top: 50%;
         transform: translate(0,-50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
         text-align: center;
         .name {
-            font-family: 'Oswald', sans-serif;
-            font-size: 6em;
+            font-family: 'Teko', sans-serif;
+            font-size: 9em;
             text-transform: uppercase;
             font-weight: lighter;
-            letter-spacing: 0.5em;
+            letter-spacing: 0.3em;
             text-shadow: 4px 4px rgba(0, 0, 0, 0.09);
             font-style: normal;
             color: rgba(255, 255, 255, 1);

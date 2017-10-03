@@ -136,21 +136,23 @@
         padding: 5% !important;
     }
     .skills-section {
-        text-align: center;
+        text-align: left;
         height: auto;
         background: url("../assets/bg7.png") 0px 0px fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         .skills-heading {
-            color: #000000;
+            color: #454545;
+
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
         .overlay {
             height: 100%;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.75);
             position: relative;
-            padding: 5% 10%;
+            padding: 5% 15%;
         }
     }
     .skills-icons {

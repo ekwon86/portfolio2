@@ -70,6 +70,10 @@
     .slide-fade-right-enter, .slide-fade-right-leave-to
         /* .slide-fade-leave-active below version 2.1.8 */ {
         transform: translateX(-100px);
+        -ms-transform: translateX(-100px);
+        -webkit-transform: translateX(-100px);
+        -moz-transform: translateX(-100px);
+        -o-transform: translateX(-100px);
         opacity: 0;
     }
 
@@ -82,6 +86,10 @@
     .slide-fade-left-enter, .slide-fade-left-leave-to
         /* .slide-fade-leave-active below version 2.1.8 */ {
         transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -o-transform: translateX(100px);
         opacity: 0;
     }
 

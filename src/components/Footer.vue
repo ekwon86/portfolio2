@@ -17,7 +17,7 @@
                 </a>
                 <i class="fa fa-2x fa-file-pdf-o contact-icons" aria-hidden="true"></i>
             </div>
-            <p>&copy; 2017 Eugene Kwon</p>
+            <p>&copy; {{ currentYear }} Eugene Kwon</p>
         </div>
     </div>
 </template>
@@ -26,8 +26,16 @@
     export default{
         data(){
             return {
-
+                currentYear: ''
             }
+        },
+        methods: {
+            getCurrentYear() {
+                this.currentYear = new Date().getFullYear();
+            }
+        },
+        mounted() {
+            this.getCurrentYear();
         }
     }
 </script>

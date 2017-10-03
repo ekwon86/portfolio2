@@ -22,18 +22,25 @@
     .about-section {
         height: 40vh;
         width: 100%;
-        text-align: center;
+        text-align: left;
         background-color: white;
     }
     .about-subtext {
         line-height: 5vh;
         font-weight: lighter;
-        text-align: center;
+        text-align: justify;
+    }
+    .about-me-heading {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .about-container {
         position: relative;
-        padding: 0 15vw;
+        padding: 0 15%;
         top: 50%;
         transform:translate(0,-50%);
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
     }
 </style>

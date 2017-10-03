@@ -1,7 +1,7 @@
 <template>
   <div id="app">
+     <navbar :showNav="showNav"></navbar>
      <landing></landing>
-     <navbar></navbar>
      <about></about>
      <experience :expScrolledTo="expScrolledTo"></experience>
      <skills></skills>
@@ -21,7 +21,8 @@ export default {
     data () {
           return {
               showSkills: false,
-              expScrolledTo: false
+              expScrolledTo: false,
+              showNav: false
           }
     },
     components: {
@@ -36,12 +37,18 @@ export default {
         checkScroll(){
             const experienceSection = document.getElementById('experience');
             const topOfExpSection = experienceSection.getBoundingClientRect().top;
+            const windowHeight = Math.max(document.documentElement.clientHeight);
+            const halfViewHeight= windowHeight / 2;
 
             if (topOfExpSection <= 450){
                 this.expScrolledTo = true;
             }
 
-
+            if (document.documentElement.scrollTop > halfViewHeight) {
+                this.showNav = true;
+            } else {
+                this.showNav = false;
+            }
         },
 
     },
@@ -57,13 +64,13 @@ export default {
         font-family: 'Quattrocento Sans', sans-serif;
     }
     .headings {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Teko', sans-serif;
         text-transform: uppercase;
-        letter-spacing: 1vw;
-        font-size: 4em;
+        letter-spacing: 0.075em;
+        font-size: 4.5em;
     }
     .sub-headings {
-        font-family: 'Oswald', sans-serif;
+        font-family: 'Teko', sans-serif;
         text-transform: uppercase;
         font-size: 2em;
         letter-spacing: 0.25vw;
