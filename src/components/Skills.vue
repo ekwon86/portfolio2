@@ -55,6 +55,11 @@
                     </div>
                 </transition>
             </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <small><em>*** &nbsp;Please hover over icon to view name of technology </em></small>
+                </div>
+            </div>
         </div>
     </div>
 </template>

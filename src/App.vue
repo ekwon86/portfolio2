@@ -4,6 +4,7 @@
      <landing></landing>
      <about></about>
      <skills></skills>
+     <portfolio></portfolio>
      <experience :expScrolledTo="expScrolledTo"></experience>
      <bottom></bottom>
   </div>
@@ -14,6 +15,7 @@ import Landing from './components/Landing.vue';
 import About from'./components/About.vue';
 import Navbar from './components/Navbar.vue';
 import Skills from './components/Skills.vue';
+import Portoflio from './components/Portfolio.vue';
 import Experience from './components/Experience.vue';
 import Footer from './components/Footer.vue';
 export default {
@@ -30,6 +32,7 @@ export default {
         'about': About,
         'navbar': Navbar,
         'skills': Skills,
+        'portfolio': Portoflio,
         'experience': Experience,
         'bottom': Footer
     },
