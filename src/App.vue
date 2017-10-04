@@ -44,7 +44,7 @@ export default {
                 this.expScrolledTo = true;
             }
 
-            if (document.documentElement.scrollTop > halfViewHeight) {
+            if (document.documentElement.scrollTop || window.pageYOffset > halfViewHeight) {
                 this.showNav = true;
             } else {
                 this.showNav = false;

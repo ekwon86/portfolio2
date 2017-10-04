@@ -7,18 +7,20 @@
                     <h3 class="navbar-logo-content navbar-logo-name-text">Eugene Kwon</h3>
                 </a>
             </div>
-            <!--<div class="navbar-content right-navbar">-->
-                <!--<div class="navbar-anchor-holder">-->
-                    <!--<a href="#" class="navbar-anchor">-->
-                        <!--<span class="navbar-links">Home</span>-->
-                    <!--</a>-->
-                <!--</div>-->
-                <!--<div class="navbar-anchor-holder">-->
-                    <!--<a href="#" class="navbar-anchor">-->
-                        <!--<span class="navbar-links">Home</span>-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
+            <div class="navbar-content right-navbar">
+              <a href="#">
+                <p class="navbar-links">Home</p>
+              </a>
+              <a href="#">
+                <p class="navbar-links">About</p>
+              </a>
+              <a href="#">
+                <p class="navbar-links">Skills</p>
+              </a>
+              <a href="#">
+                <p class="navbar-links">Portfolio</p>
+              </a>
+            </div>
         </div>
     </transition>
 </template>
@@ -47,26 +49,30 @@
             height: 100%;
             margin-right: 10px;
         }
+        .navbar-links {
+          position: relative;
+          top: 50%;
+          font-size: 15px;
+          text-transform: uppercase;
+          color: white;
+          transition: 0.2s;
+          letter-spacing: 3px;
+          margin: 0;
+          display: inline-block;
+          margin-left: 25px;
+          transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          &:hover {
+            color: #36beeb;
+          }
+        }
         .navbar-anchor-holder {
             height: 100%;
-            border: 1px solid white;
             width: 50px;
             display: inline-block;
-        }
-
-        .navbar-links {
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-size: 18px;
-            font-family: 'Teko', sans-serif;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            -o-transform: translateY(-50%);
         }
         .navbar-logo-content {
             display: inline-block;
@@ -91,7 +97,6 @@
         .right-navbar {
             width: 75%;
             text-align: right;
-            border: 1px solid white;
         }
         .navbar-content {
             height: 50px;
