@@ -1,8 +1,7 @@
 <template>
-    <div class="skills-section" id="skills">
+    <div class="skills-section" id="Skills">
         <div class="overlay">
             <h1 class="headings skills-heading">skills</h1>
-            <!--<button type="button" v-on:click="animateBorder">CLICK</button>-->
             <div class="row skills-container">
                 <transition name="slide-fade-left">
                     <div class="col-xs-12 col-md-4 skills-main">
@@ -14,8 +13,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
-                                        <!--<div class="level-bar"></div>-->
-                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
+                                        <div class="frontend-level-bar level-bar"></div>
                                     </div>
                                 </div>
                             </div>
@@ -32,8 +30,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
-                                        <!--<div class="level-bar"></div>-->
-                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
+                                        <div class="backend-level-bar level-bar"></div>
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +47,7 @@
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
-                                        <!--<div class="level-bar"></div>-->
-                                        <div class="level-bar" v-bind:style="{width: skill.percentage + '%'}"></div>
+                                        <div class="misc-level-bar level-bar"></div>
                                     </div>
                                 </div>
                             </div>
@@ -104,27 +100,55 @@
             }
         },
         methods: {
-            addToArray(array){
-                for (let i = 0; i < array.length; i++){
-                    this.percentageArray.push(array[i].percentage);
+            animateFrontEndWidth() {
+                let index = 0;
+                const frontEndBars = document.getElementsByClassName("frontend-level-bar");
+                for (let i = 0; i < frontEndBars.length; i++) {
+                    let current = frontEndBars[i];
+                    current.style.width = this.frontEnd[index].percentage + '%';
+                    index++;
                 }
             },
-            animateBorder(){
-                let skillBar = document.getElementsByClassName('level-bar');
-                let currentPercentage;
+            animateBackEndWidth() {
+                let index = 0;
+                const backEndBars = document.getElementsByClassName("backend-level-bar");
+                for (let i = 0; i < backEndBars.length; i++) {
+                    let current = backEndBars[i];
+                    current.style.width = this.backEnd[index].percentage + '%';
+                    index++;
+                }
+            },
+            animateMiscWidth() {
+                let index = 0;
+                const miscBars = document.getElementsByClassName("misc-level-bar");
+                for (let i = 0; i < miscBars.length; i++) {
+                    let current = miscBars[i];
+                    current.style.width = this.misc[index].percentage + '%';
+                    index++;
+                }
+            },
+            triggerAllWidthAnimations() {
+                setTimeout(() => {
+                    this.animateFrontEndWidth();
+                }, 100);
+                setTimeout(() => {
+                    this.animateBackEndWidth();
+                }, 300);
+                setTimeout(() => {
+                    this.animateMiscWidth();
+                }, 500);
+            },
+            checkScroll() {
+                const skillSection = document.getElementById('Skills');
+                const topOfSkillSection = skillSection.getBoundingClientRect().top;
 
-                for (let i = 0; i < skillBar.length; i++){
-                    for (let j = i; j < this.percentageArray.length; j++){
-                        console.log('J is currently ' + j);
-                    }
-                    skillBar[i].setAttribute("style", "width:" + currentPercentage + "%;");
+                if (topOfSkillSection <= 250) {
+                    this.triggerAllWidthAnimations();
                 }
             }
         },
-        mounted(){
-            this.addToArray(this.frontEnd);
-            this.addToArray(this.backEnd);
-            this.addToArray(this.misc);
+        created() {
+            window.addEventListener('scroll', this.checkScroll);
         }
     }
 </script>
@@ -155,6 +179,9 @@
             padding: 5% 15%;
         }
     }
+    .level-bar-width {
+        width: 50% !important;
+    }
     .skills-icons {
         width: 65px;
     }
@@ -184,6 +211,7 @@
                     height: 100%;
                     background-color: rgba(117, 225, 90, 0.9);
                     transition: 0.5s;
+                    -webkit-transition: 0.5s;
                 }
             }
         }

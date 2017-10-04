@@ -3,8 +3,8 @@
      <navbar :showNav="showNav"></navbar>
      <landing></landing>
      <about></about>
-     <experience :expScrolledTo="expScrolledTo"></experience>
      <skills></skills>
+     <experience :expScrolledTo="expScrolledTo"></experience>
      <bottom></bottom>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
     },
     methods:{
         checkScroll(){
-            const experienceSection = document.getElementById('experience');
+            const experienceSection = document.getElementById('Experience');
             const topOfExpSection = experienceSection.getBoundingClientRect().top;
             const windowHeight = Math.max(document.documentElement.clientHeight);
             const halfViewHeight= windowHeight / 2;

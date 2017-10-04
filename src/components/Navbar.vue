@@ -8,17 +8,17 @@
                 </a>
             </div>
             <div class="navbar-content right-navbar">
-              <a href="#">
+              <a href="#" v-scroll-to="{el: '#Landing', offset: spacerHeight, duration: 500}">
                 <p class="navbar-links">Home</p>
               </a>
-              <a href="#">
+              <a href="#" v-scroll-to="{el: '#About', offset: spacerHeight, duration: 500}">
                 <p class="navbar-links">About</p>
               </a>
-              <a href="#">
+              <a href="#" v-scroll-to="{el: '#Skills', offset: spacerHeight, duration: 500}">
                 <p class="navbar-links">Skills</p>
               </a>
-              <a href="#">
-                <p class="navbar-links">Portfolio</p>
+              <a href="#" v-scroll-to="{el: '#Experience', offset: spacerHeight, duration: 500}">
+                <p class="navbar-links">Experience</p>
               </a>
             </div>
         </div>
@@ -30,6 +30,7 @@
         props: ['showNav'],
         data(){
             return {
+              spacerHeight: 0
             }
         }
     }
@@ -112,10 +113,10 @@
         }
     }
     .slide-fade-enter-active {
-        transition: all .3s ease;
+        transition: all .8s ease;
     }
     .slide-fade-leave-active {
-        transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
     .slide-fade-enter, .slide-fade-leave-to
         /* .slide-fade-leave-active below version 2.1.8 */ {
