@@ -92,6 +92,13 @@
                         github: 'https://github.com/ekwon86/portfolio2',
                         url: '#',
                         desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        techsUsed: [
+                            { lang: 'Vue', icon: 'vuejs-plain colored'},
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
                         showContents: false
                     },
                     {
