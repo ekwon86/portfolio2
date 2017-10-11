@@ -3,8 +3,10 @@
         <div class="portfolio-content">
           <p class="headings portfolio-heading">Portfolio</p>
           <div class="project-container">
-            <div class="indiv-project-subcontainers" v-for="project in lfzProjects" :style="{ 'background': 'url(' + project.imgPath + ')' }">
-              <h3>{{ project.name }}</h3>
+            <div class="indiv-project-subcontainers" v-for="project in lfzProjects">
+                <div class="indiv-project-img-holder">
+                    <div class="indiv-projects-img" :id="project.id"></div>
+                </div>
             </div>
           </div>
         </div>
@@ -18,18 +20,18 @@
               lfzProjects: [
                 {
                   name: 'Mega Match Man',
-                  url: 'http://www.eugenekwon.com/projects/megamatchman',
-                  imgPath: '../assets/megamatchman.png'
+                  id: 'megamatchman',
+                  url: 'http://www.eugenekwon.com/projects/megamatchman'
                 },
                 {
                   name: 'Calculator',
-                  url: 'http://www.eugenekwon.com/projects/calculator',
-                  imgPath: '../assets/calculator.png'
+                  id: 'calculator',
+                  url: 'http://www.eugenekwon.com/projects/calculator'
                 },
                 {
-                  name: 'I Want',
-                  url: 'http://www.eugenekwon.com/projects/iwant',
-                  imgPath: '../assets/iwant.png'
+                  name: 'Tic-Tac-Toe',
+                  id: 'tictactoe',
+                  url: 'http://www.eugenekwon.com/projects/iwant'
                 }
               ],
               workProjects: [
@@ -69,16 +71,41 @@
       border: 1px solid black;
     }
     .indiv-project-subcontainers {
-      border: 1px solid red;
-      padding: 25px;
-      width: 33.33%;
+      border: 1px solid blue;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 33.33333%;
       display: inline-block;
       height: 250px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      &:hover {
+        #megamatchman {
+            background: url(../assets/megamatchman.jpg);
+        }
+        #calculator {
+            background: url(../assets/calculator.jpg);
+        }
+        #tictactoe {
+            background: url(../assets/tictactoe.jpg);
+        }
+    }
+    .indiv-project-img-holder {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    .indiv-projects-img {
+        width: 100%;
+        height: 100%;
+        -moz-transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+    }
+    .indiv-projects-img:hover {
         cursor: pointer;
-      }
+        -moz-transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        -o-transform: scale(1.15);
+        -ms-transform: scale(1.15);
     }
 </style>

@@ -17,11 +17,11 @@
               <a href="#" v-scroll-to="{el: '#Skills', offset: spacerHeight, duration: 500}">
                 <p class="navbar-links">Skills</p>
               </a>
-              <a href="#" v-scroll-to="{el: '#Experience', offset: spacerHeight, duration: 500}">
-                <p class="navbar-links">Experience</p>
-              </a>
               <a href="#" v-scroll-to="{el: '#Portfolio', offset: spacerHeight, duration: 500}">
                 <p class="navbar-links">Portfolio</p>
+              </a>
+              <a href="#" v-scroll-to="{el: '#Experience', offset: spacerHeight, duration: 500}">
+                <p class="navbar-links">Experience</p>
               </a>
             </div>
         </div>
