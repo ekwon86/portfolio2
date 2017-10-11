@@ -9,7 +9,7 @@
                             <p class="sub-headings skills-sub-headings">Front-End</p>
                             <div v-for="skill in frontEnd" class="skills-holder">
                                 <div class="skill-holder-icon-holder">
-                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
+                                    <i :class="'devicon-' + skill.icon + ' devicons'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
@@ -26,7 +26,7 @@
                             <p class="sub-headings skills-sub-headings">Back-End</p>
                             <div v-for="skill in backEnd" class="skills-holder">
                                 <div class="skill-holder-icon-holder">
-                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
+                                    <i :class="'devicon-' + skill.icon + ' devicons'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">
@@ -43,7 +43,7 @@
                             <p class="sub-headings skills-sub-headings">Additional</p>
                             <div v-for="skill in misc" class="skills-holder">
                                 <div class="skill-holder-icon-holder">
-                                    <i :class="'devicon-' + skill.icon + ' devicons spin'" data-toggle="tooltip" :title="skill.lang"></i>
+                                    <i :class="'devicon-' + skill.icon + ' devicons'" data-toggle="tooltip" :title="skill.lang"></i>
                                 </div>
                                 <div class="skill-holder-progress-bar-holder">
                                     <div class="skill-level-bar">

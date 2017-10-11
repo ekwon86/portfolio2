@@ -3,7 +3,7 @@
         <div class="portfolio-content">
           <p class="headings portfolio-heading">Portfolio</p>
           <div class="project-container">
-            <div class="indiv-project-subcontainers" v-for="(project, index) in lfzProjects">
+            <div class="indiv-project-subcontainers" v-for="(project, index) in projects">
                 <div class="indiv-project-img-holder">
                     <div class="indiv-projects-overlay" v-on:mouseover="showProjectContents(index)" v-on:mouseleave="hideProjectContents(index)">
                         <div class="project-contents">
@@ -14,13 +14,10 @@
                             </transition>
                             <transition name="slide-fade-bottom">
                                 <div v-if="project.showContents" class="project-contents-bottom">
-                                    <!--Github link-->
                                     <a :href="project.github" target="_blank">
                                         <i class="fa fa-github fa-2x project-icons" aria-hidden="true"></i>
                                     </a>
-                                    <!--Info link-->
                                     <i class="fa fa-info-circle fa-2x project-icons" aria-hidden="true" v-on:click="displayModal(index)"></i>
-                                    <!--Rocket link-->
                                     <a :href="project.url" target="_blank">
                                         <i class="fa fa-rocket fa-2x project-icons" aria-hidden="true"></i>
                                     </a>
@@ -39,7 +36,23 @@
                     <div class="project-info-picture-holder">
                         <i class="fa fa-times-circle exit-icon" aria-hidden="true" v-on:click="closeModal()"></i>
                     </div>
-                    <div class="project-info-info-holder"></div>
+                    <div class="project-info-info-holder">
+                        <div class="project-info-name-and-tech-holder">
+                            <div class="project-info-name-container">
+                                <h3 class="project-info-modal-name">{{ modal.projectName }}</h3>
+                            </div>
+                            <div class="project-info-tech-container">
+                                <div class="project-info-tech-icon-container">
+                                     <span v-for="skill in modal.projectTechsUsed">
+                                        <i :class="'skill-icons devicon-' + skill.icon + ' colored devicons'" data-toggle="tooltip" :title="skill.lang"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info-desc-container">
+                            <h1 style="font-size: 18px; color: black">test</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -50,13 +63,43 @@
     export default{
         data(){
             return {
-                showProjectModal: true,
-                lfzProjects: [
+                showProjectModal: false,
+                modal: {
+                    projectName: '',
+                    projectImgPath: '',
+                    projectTechsUsed: []
+                },
+                projects: [
+                    {
+                        name: 'Genkiyaki Website',
+                        id: 'genkiyaki',
+                        github: 'https://github.com/ekwon86/genkiyaki',
+                        url: 'http://www.houseofgenkiyaki.com/',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        techsUsed: [
+                            { lang: 'Angular', icon: 'angularjs-plain' },
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'Heroku', icon: 'heroku-original colored'},
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
+                        showContents: false
+                    },
+                    {
+                        name: 'Web Portfolio',
+                        id: 'portfolio',
+                        github: 'https://github.com/ekwon86/portfolio2',
+                        url: '#',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        showContents: false
+                    },
                     {
                         name: 'Mega Match Man',
                         id: 'megamatchman',
                         url: 'http://www.eugenekwon.com/projects/megamatchman',
                         github: 'https://github.com/ekwon86/mega_match_man',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
                         showContents: false
                     },
                     {
@@ -64,6 +107,7 @@
                         id: 'calculator',
                         github: 'https://github.com/ekwon86/calculator',
                         url: 'http://www.eugenekwon.com/projects/calculator',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
                         showContents: false
                     },
                     {
@@ -71,32 +115,28 @@
                         id: 'tictactoe',
                         github: 'https://github.com/ekwon86/tictactoe',
                         url: 'http://www.eugenekwon.com/projects/iwant',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
                         showContents: false
-                    }
-                ],
-                workProjects: [
-                    {
-                        name: 'Conference 2017 Site',
-                        url: 'http://www.laserapp.com/conference2017',
-                        showContents : false
                     }
                 ]
             }
         },
         methods: {
             showProjectContents: function(index) {
-                this.lfzProjects[index].showContents = true;
+                this.projects[index].showContents = true;
             },
             hideProjectContents: function(index) {
-                this.lfzProjects[index].showContents = false;
+                this.projects[index].showContents = false;
             },
             displayModal(index) {
                 this.showProjectModal = true;
-                document.body.style.overflow = 'hidden';
-                console.log(index);
+                this.modal.projectName = this.projects[index].name;
+                this.modal.projectTechsUsed = this.projects[index].techsUsed;
             },
             closeModal() {
                 this.showProjectModal = false;
+                this.modal.projectName = '';
+                this.modal.projectTechsUsed = []
             }
         }
     }
@@ -125,7 +165,7 @@
       font-size: 0;
       height: auto;
       vertical-align: top;
-      border: 1px solid rgba(0,0,0,0.25);
+      border: 1px solid rgba(0,0,0,0.075);
     }
     .indiv-project-subcontainers {
       padding: 10px;
@@ -141,10 +181,17 @@
         #tictactoe {
             background: url(../assets/tictactoe.jpg);
         }
+        #genkiyaki {
+            background: url(../assets/genkiyaki.jpg);
+        }
+        #portfolio {
+            background: url(../assets/portfolio.jpg);
+        }
     }
     .indiv-project-img-holder {
         height: 100%;
         width: 100%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         position: relative;
         overflow: hidden;
     }
@@ -222,22 +269,67 @@
         height: 60%;
         text-align: right;
         padding: 25px 35px;
-        background:url(../assets/megamatchman.jpg);
         background-size: cover;
         background-position: center center;
         .exit-icon {
             font-size: 80px;
-            color: white;
+            color: rgba(0,0,0,0.5);
             transition: 0.2s;
             &:hover {
                 cursor: pointer;
-                color: #ff4641;
+                color: white;
             }
         }
     }
     .project-info-info-holder {
         height: 40%;
         border-top: 1px solid rgba(0,0,0,0.3);
+        padding: 15px 30px;
+        position: relative;
+        .project-info-name-and-tech-holder {
+            height: 25%;
+            width: 100%;
+            font-size: 0;
+            position: relative;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+            .project-info-desc-container {
+                text-align: left;
+            }
+            .project-info-name-container {
+                width: 50%;
+                height: 100%;
+                vertical-align: top;
+                display: inline-block;
+                text-align: left;
+                position: relative;
+                .project-info-modal-name {
+                    font-size: 50px;
+                    color: #444444;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-family: 'Teko', sans-serif;
+                    letter-spacing: 3px;
+                }
+            }
+            .project-info-tech-container {
+                width: 50%;
+                vertical-align: top;
+                height: 100%;
+                display: inline-block;
+                .project-info-tech-icon-container {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    text-align: right;
+                }
+                .skill-icons {
+                    font-size: 35px;
+                    margin-left: 15px;
+                }
+            }
+        }
     }
 
     /*TRANSITIONS*/
