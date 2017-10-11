@@ -97,7 +97,7 @@
                     { lang: 'Bower', icon: 'bower-plain colored', percentage: '60' },
                     { lang: 'Atom', icon: 'atom-original colored',  percentage: '100' },
                     { lang: 'Webstorm', icon: 'webstorm-plain colored',  percentage: '100' },
-                    { lang: 'Wordpress', icon: 'wordpress-plain colored',percentage: '60' },
+                    { lang: 'Wordpress', icon: 'wordpress-plain colored',percentage: '80' },
                     { lang: 'Photoshop', icon: 'photoshop-plain colored', percentage: '60'},
                     { lang: 'Illustrator', icon: 'illustrator-plain colored', percentage: '60' }
                 ],

@@ -144,7 +144,7 @@
 
 <style lang="scss">
     #Portfolio {
-        height: 1500px;
+        height: 1000px;
         /*position: relative;*/
         width: 100vw;
         background-color: white;
