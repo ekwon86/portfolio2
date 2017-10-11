@@ -17,6 +17,9 @@
     <div id="app"></div>
     <script src="./dist/build.js"></script>
     <script>
+        $(document).ready(function() {
+           $('[data-toggle="tooltip"]').tooltip();
+        });
         particlesJS.load('particles-js', 'particles.json');
     </script>
   </body>

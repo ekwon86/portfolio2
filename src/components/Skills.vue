@@ -89,17 +89,17 @@
                     { lang: 'MySQL', icon: 'mysql-plain colored', percentage: '50'}
                 ],
                 misc: [
-                    { skill: 'Version Management (Git)', icon: 'git-plain colored', percentage: '70' },
-                    { skill: 'Heroku', icon: 'heroku-original colored',  percentage: '60' },
-                    { skill: 'Webpack', icon: 'webpack-plain colored', percentage: '60' },
-                    { skill: 'Grunt', icon: 'grunt-line colored', percentage: '60' },
-                    { skill: 'Gulp', icon: 'gulp-plain colored',  percentage: '60' },
-                    { skill: 'Bower', icon: 'bower-plain colored', percentage: '60' },
-                    { skill: 'Atom', icon: 'atom-original colored',  percentage: '100' },
-                    { skill: 'Webstorm', icon: 'webstorm-plain colored',  percentage: '100' },
+                    { lang: 'Version Management (Git)', icon: 'git-plain colored', percentage: '70' },
+                    { lang: 'Heroku', icon: 'heroku-original colored',  percentage: '60' },
+                    { lang: 'Webpack', icon: 'webpack-plain colored', percentage: '60' },
+                    { lang: 'Grunt', icon: 'grunt-line colored', percentage: '60' },
+                    { lang: 'Gulp', icon: 'gulp-plain colored',  percentage: '60' },
+                    { lang: 'Bower', icon: 'bower-plain colored', percentage: '60' },
+                    { lang: 'Atom', icon: 'atom-original colored',  percentage: '100' },
+                    { lang: 'Webstorm', icon: 'webstorm-plain colored',  percentage: '100' },
                     { lang: 'Wordpress', icon: 'wordpress-plain colored',percentage: '60' },
-                    { skill: 'Photoshop', icon: 'photoshop-plain colored', percentage: '60'},
-                    { skill: 'Illustrator', icon: 'illustrator-plain colored', percentage: '60' }
+                    { lang: 'Photoshop', icon: 'photoshop-plain colored', percentage: '60'},
+                    { lang: 'Illustrator', icon: 'illustrator-plain colored', percentage: '60' }
                 ],
                 percentageArray: []
             }
