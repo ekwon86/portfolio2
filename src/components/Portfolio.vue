@@ -107,6 +107,13 @@
                         url: 'http://www.eugenekwon.com/projects/megamatchman',
                         github: 'https://github.com/ekwon86/mega_match_man',
                         desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        techsUsed: [
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'jQuery', icon: 'jquery-plain colored' },
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
                         showContents: false
                     },
                     {
@@ -115,6 +122,13 @@
                         github: 'https://github.com/ekwon86/calculator',
                         url: 'http://www.eugenekwon.com/projects/calculator',
                         desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        techsUsed: [
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'jQuery', icon: 'jquery-plain colored' },
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
                         showContents: false
                     },
                     {
@@ -123,6 +137,13 @@
                         github: 'https://github.com/ekwon86/tictactoe',
                         url: 'http://www.eugenekwon.com/projects/iwant',
                         desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        techsUsed: [
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'jQuery', icon: 'jquery-plain colored' },
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
                         showContents: false
                     }
                 ]
