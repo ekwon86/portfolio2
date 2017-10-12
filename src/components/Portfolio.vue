@@ -18,7 +18,7 @@
                                         <i class="fa fa-github fa-2x project-icons" aria-hidden="true"></i>
                                     </a>
                                     <i class="fa fa-info-circle fa-2x project-icons" aria-hidden="true" v-on:click="displayModal(index)"></i>
-                                    <a :href="project.url" target="_blank">
+                                    <a :href="project.url" target="_blank" v-if="project.url">
                                         <i class="fa fa-rocket fa-2x project-icons" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -99,7 +99,7 @@
                         name: 'Web Portfolio',
                         id: 'portfolio',
                         github: 'https://github.com/ekwon86/portfolio2',
-                        url: '#',
+                        url: '',
                         desc: 'My web portolio was created from scratch using the VueJS library. I utilized the Vue CLI to develop this portfolio on a local development environment and also to bundle and deploy it once finished.',
                         ifLFZ: false,
                         techsUsed: [
@@ -209,8 +209,8 @@
 <style lang="scss">
     #Portfolio {
         height: 900px;
-        /*position: relative;*/
         width: 100vw;
+        position: relative;
         background-color: white;
         padding: 5% 15%;
         .portfolio-content {
@@ -434,5 +434,24 @@
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0
+    }
+
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        #Portfolio {
+            padding: 5% 10%;
+            height: 1050px;
+        }
+        .indiv-project-subcontainers {
+            width: 100%;
+            height: 150px;
+            padding: 5px;
+        }
+        .project-name {
+            font-size: 1rem;
+        }
+        .project-icons {
+            font-size: 25px;
+        }
     }
 </style>

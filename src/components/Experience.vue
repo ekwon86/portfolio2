@@ -218,6 +218,27 @@
                 }
             }
         }
-
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+        .background-split-left {
+            padding-left: 0 !important;
+        }
+        .background-split-right {
+            padding-right: 0 !important;
+        }
+        .sub-headings {
+            font-size: 2em !important;
+            padding-bottom: 5px !important;
+            margin-bottom: 20px !important;
+        }
+        .edu-exp-sub-headings {
+            font-size: 1em;
+        }
+        em {
+            margin-bottom: 10px;
+        }
+        p, em{
+            font-size: 12px;
+        }
     }
 </style>

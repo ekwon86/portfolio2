@@ -43,4 +43,19 @@
         -moz-transform: translateY(-50%);
         -o-transform: translateY(-50%);
     }
+
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        .about-section {
+            height: 80vh;
+        }
+
+        .about-container {
+            padding: 0 10%;
+        }
+
+        .about-subtext {
+            font-size: 12px;
+        }
+    }
 </style>

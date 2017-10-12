@@ -130,4 +130,11 @@
         -o-transform: translateY(-40px);
         opacity: 0;
     }
+
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        #navbar {
+            display: none;
+        }
+    }
 </style>

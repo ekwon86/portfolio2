@@ -80,7 +80,6 @@ export default {
         width: 12em;
     }
 
-
     .name-container {
         width: 100%;
         position: relative;
@@ -100,7 +99,6 @@ export default {
             text-shadow: 4px 4px rgba(0, 0, 0, 0.09);
             font-style: normal;
             color: rgba(255, 255, 255, 1);
-            /*text-shadow: 1px 1px #515151;*/
         }
         .name-subtext {
             color: rgba(255,255,255, 1);
@@ -157,4 +155,30 @@ export default {
         opacity: 0;
     }
 
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        #Landing {
+            display: none;
+        }
+        #particles-js {
+            display: none;
+        }
+
+        .content-a {
+            background-color: grey;
+        }
+
+        .eklogo {
+            height: 10em;
+            width: 10em;
+        }
+
+        .name {
+            font-size: 3em !important;
+        }
+
+        .name-subtext {
+            font-size: 1.5em !important;
+        }
+    }
 </style>

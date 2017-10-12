@@ -55,7 +55,7 @@
                     </div>
                 </transition>
             </div>
-            <div class="row text-center">
+            <div class="row text-center hover-over-me-text">
                 <div class="col-md-12">
                     <small><em>*** &nbsp;Please hover over icon to view name of technology </em></small>
                 </div>
@@ -248,4 +248,43 @@
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        .skills-section .overlay {
+            padding: 10%;
+        }
+        .hover-over-me-text {
+            display: none;
+        }
+        .skills-container .skills-main {
+            width: 100%;
+        }
+        .skills-container .skills-sub {
+            padding: 3%;
+        }
+        .skills-sub-headings {
+            margin: 0;
+            font-size: 1.75em;
+            padding-bottom: 0;
+        }
+        .skills-holder {
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 30px;
+        }
+        .skills-holder .skill-holder-icon-holder .devicons {
+            font-size: 18px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            height: 10px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .skills-holder .skill-holder-icon-holder {
+            padding: 0;
+        }
+    }
 </style>

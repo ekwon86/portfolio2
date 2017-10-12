@@ -79,5 +79,10 @@ export default {
         letter-spacing: 0.25vw;
     }
 
-
+    /*MOBILE VIEW*/
+    @media (min-width: 320px) and (max-width: 480px) {
+        .headings {
+            font-size: 3em;
+        }
+    }
 </style>

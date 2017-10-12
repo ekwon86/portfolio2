@@ -43,7 +43,8 @@
     $hovercolor: #32a8d0;
     #footer {
         width: 100%;
-        height: 25vh;
+        min-height: 100px;
+        height: auto;
         text-align: center;
         background-position: bottom;
         background-repeat: no-repeat;
@@ -74,6 +75,18 @@
                 color: white;
                 margin: 0;
             }
+        }
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+        #footer .overlay {
+            padding: 12px;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .contact-icons {
+            font-size: 20px;
+        }
+        p {
+            font-size: 12px;
         }
     }
 </style>
