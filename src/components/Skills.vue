@@ -324,4 +324,35 @@
             padding: 5px;
         }
     }
+
+    /*LAPTOPS*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        #Skills .overlay {
+            padding: 5% 10%;
+        }
+        .skills-sub-headings {
+            margin: 0;
+            font-size: 2em;
+            padding-bottom: 0;
+        }
+        .skills-holder {
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 50px;
+        }
+        .skills-holder .skill-holder-icon-holder .devicons {
+            font-size: 30px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            height: 12px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .skills-holder .skill-holder-icon-holder {
+            padding: 5px;
+        }
+    }
 </style>

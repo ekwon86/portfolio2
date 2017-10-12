@@ -74,15 +74,13 @@
         }
     }
 
-
     /*LAPTOPS*/
     @media (min-width: 1025px) and (max-width: 1280px) {
-        .name {
-            font-size: 7em !important;
-            margin: 0;
+        .about-section {
+            height: 50vh;
         }
-        .name-subtext {
-            font-size: 2em !important;
+        .about-container {
+            padding: 5% 10%;
         }
     }
 </style>

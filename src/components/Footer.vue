@@ -14,7 +14,9 @@
                 <a href="mailto:ekwon86@gmail.com" target="_blank">
                     <i class="fa fa-2x fa-envelope contact-icons" aria-hidden="true"></i>
                 </a>
-                <i class="fa fa-2x fa-file-pdf-o contact-icons" aria-hidden="true"></i>
+                <a href="../assets/eugenekwon_resume.pdf" download>
+                    <i class="fa fa-2x fa-file-pdf-o contact-icons" aria-hidden="true"></i>
+                </a>
             </div>
             <p>&copy; {{ currentYear }} Eugene Kwon</p>
         </div>
@@ -101,6 +103,19 @@
         }
         p {
             font-size: 12px;
+        }
+    }
+
+    /*LAPTOPS*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        #footer {
+            height: 20vh;
+        }
+        #footer .overlay {
+            padding: 25px;
+        }
+        .icon-holder {
+            margin: 0 !important;
         }
     }
 </style>

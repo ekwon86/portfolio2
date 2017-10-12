@@ -147,6 +147,9 @@
 
     /*LAPTOPS*/
     @media (min-width: 1025px) and (max-width: 1280px) {
+        #navbar {
+            padding: 0 10%;
+        }
         #navbar .left-navbar {
             width: 35%;
         }

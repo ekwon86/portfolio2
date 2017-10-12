@@ -129,6 +129,22 @@
                         showContents: false
                     },
                     {
+                        name: 'Conference Schedule',
+                        id: 'conferenceschedule',
+                        github: 'https://github.com/ekwon86/conferenceschedule',
+                        url: 'http://www.eugenekwon.com/projects/conferenceschedule/',
+                        desc: 'This is an application that was developed utilizing the VueJS library. A http request is made to the Fieldbook and Wunderground APIs to retrieve the conference schedule and weather forecast respectively. Said information is then displayed on a large screen to conference attendees.',
+                        isLFZ: false,
+                        techsUsed: [
+                            { lang: 'Vue', icon: 'vuejs-plain colored'},
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
+                        showContents: false
+                    },
+                    {
                         name: 'What\'s for Lunch?',
                         id: 'whatsforlunch',
                         github: 'https://github.com/ekwon86/whatsforlunch',
@@ -273,6 +289,9 @@
         #whatsforlunch {
             background: url('../assets/whatsforlunch.jpg');
         }
+        #conferenceschedule {
+            background: url('../assets/conferenceschedule.jpg');
+        }
     }
     .indiv-project-img-holder {
         height: 100%;
@@ -373,8 +392,9 @@
     .project-info-desc-container {
       text-align: left;
       .project-description {
-        font-size: 20px;
-        color: #444444;
+          font-size: 20px;
+          color: #444444;
+          text-align: justify;
       }
     }
 
@@ -546,6 +566,48 @@
         }
         .project-info-desc-container .project-description {
             font-size: 14px;
+        }
+    }
+
+    /*LAPTOPS*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        #Portfolio {
+            padding: 5% 10%;
+            height: 900px;
+        }
+
+        .indiv-project-subcontainers {
+            height: 200px;
+        }
+        .project-name {
+            font-size: 1.25rem;
+        }
+        .project-info {
+            width: 85vw;
+            height: 85vh;
+        }
+        .project-info-picture-holder {
+            height: 40%;
+            padding-top: 10px;
+        }
+        .project-info-info-holder {
+            height: 60%;
+        }
+        .lfz-logo {
+            width: 20px;
+        }
+        .exit-icon {
+            font-size: 65px !important;
+        }
+        .project-info-modal-name {
+            font-size: 40px !important;
+        }
+        .skill-icons {
+            font-size: 35px !important;
+            margin-left: 18px !important
+        }
+        .project-info-desc-container .project-description {
+            font-size: 20px;
         }
     }
 </style>
