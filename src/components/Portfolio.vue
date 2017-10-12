@@ -129,6 +129,22 @@
                         showContents: false
                     },
                     {
+                        name: 'What\'s for Lunch?',
+                        id: 'whatsforlunch',
+                        github: 'https://github.com/ekwon86/whatsforlunch',
+                        url: 'http://www.eugenekwon.com/projects/whatsforlunch',
+                        desc: 'This is an application that I developed with several other developers while attending the LearningFuze programming bootcamp program. I assumed the role of a Front-End Developer and was responsible for the layout, design, and animations. The application makes an AJAX call to the Foursquare API and retrieves all restaurants within a 5 mile radius of the user.',
+                        ifLFZ: true,
+                        techsUsed: [
+                            { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'jQuery', icon: 'jquery-plain colored' },
+                            { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                            { lang: 'HTML', icon: 'html5-plain' },
+                            { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
+                        showContents: false
+                    },
+                    {
                         name: 'Tic-Tac-Toe',
                         id: 'tictactoe',
                         github: 'https://github.com/ekwon86/tictactoe',
@@ -208,7 +224,7 @@
 
 <style lang="scss">
     #Portfolio {
-        height: 900px;
+        height: 1100px;
         width: 100vw;
         position: relative;
         background-color: white;
@@ -253,6 +269,9 @@
         }
         #wordpress {
             background: url('../assets/wordpress.jpg');
+        }
+        #whatsforlunch {
+            background: url('../assets/whatsforlunch.jpg');
         }
     }
     .indiv-project-img-holder {
@@ -436,7 +455,7 @@
         opacity: 0
     }
 
-    /*MOBILE VIEW*/
+    /*MOBILE VIEW - PORTRAIT*/
     @media (min-width: 320px) and (max-width: 480px) {
         #Portfolio {
             padding: 5% 10%;
@@ -444,6 +463,25 @@
         }
         .indiv-project-subcontainers {
             width: 100%;
+            height: 150px;
+            padding: 5px;
+        }
+        .project-name {
+            font-size: 1rem;
+        }
+        .project-icons {
+            font-size: 25px;
+        }
+    }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        #Portfolio {
+            padding: 5% 10%;
+            height: 650px;
+        }
+        .indiv-project-subcontainers {
+            width: 50%;
             height: 150px;
             padding: 5px;
         }

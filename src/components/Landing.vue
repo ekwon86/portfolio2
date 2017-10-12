@@ -155,17 +155,41 @@ export default {
         opacity: 0;
     }
 
-    /*MOBILE VIEW*/
+    /*MOBILE VIEW - PORTRAIT*/
     @media (min-width: 320px) and (max-width: 480px) {
-        #Landing {
-            display: none;
+        .content-a {
+            background: #000000;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
+
         #particles-js {
             display: none;
         }
 
+        .eklogo {
+            height: 8em;
+            width: 8em;
+        }
+
+        .name {
+            font-size: 2.5em !important;
+        }
+
+        .name-subtext {
+            font-size: 1em !important;
+        }
+    }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
         .content-a {
-            background-color: grey;
+            background: #000000;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        #particles-js {
+            display: none;
         }
 
         .eklogo {
@@ -174,11 +198,12 @@ export default {
         }
 
         .name {
-            font-size: 3em !important;
+            font-size: 4em !important;
+            margin-bottom: 0;
+        }
+        .name-subtext {
+            font-size: 1.25em !important;
         }
 
-        .name-subtext {
-            font-size: 1.5em !important;
-        }
     }
 </style>

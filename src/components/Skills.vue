@@ -287,4 +287,41 @@
             padding: 0;
         }
     }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        .skills-section .overlay {
+            padding: 5% 10%;
+        }
+        .hover-over-me-text {
+            display: none;
+        }
+        .skills-container .skills-sub {
+            padding: 3%;
+        }
+        .skills-sub-headings {
+            margin: 0;
+            font-size: 1.75em;
+            padding-bottom: 0;
+        }
+        .skills-holder {
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 40px;
+        }
+        .skills-holder .skill-holder-icon-holder .devicons {
+            font-size: 18px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            height: 10px;
+        }
+        .skills-holder .skill-holder-progress-bar-holder .skill-level-bar {
+            margin: 0;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .skills-holder .skill-holder-icon-holder {
+            padding: 5px;
+        }
+    }
 </style>

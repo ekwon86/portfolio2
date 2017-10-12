@@ -241,4 +241,32 @@
             font-size: 12px;
         }
     }
+
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        #Experience {
+            height: 700px;
+        }
+        .background-split-left {
+            padding-left: 0 !important;
+        }
+        .background-split-right {
+            padding-right: 0 !important;
+        }
+        .sub-headings {
+            font-size: 3em !important;
+            padding-bottom: 5px !important;
+            margin-bottom: 20px !important;
+        }
+        .edu-exp-sub-headings {
+            font-size: 1.15em;
+        }
+        em {
+            margin-bottom: 12px;
+        }
+        p, em{
+            font-size: 14px;
+        }
+    }
 </style>

@@ -44,7 +44,7 @@
         -o-transform: translateY(-50%);
     }
 
-    /*MOBILE VIEW*/
+    /*MOBILE VIEW - PORTRAIT*/
     @media (min-width: 320px) and (max-width: 480px) {
         .about-section {
             height: 80vh;
@@ -56,6 +56,21 @@
 
         .about-subtext {
             font-size: 12px;
+        }
+    }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        .about-section {
+            height: 80vh;
+        }
+        .about-subtext {
+            font-size: 15px;
+            line-height: 7vh;
+        }
+
+        .about-container {
+            padding: 0 10%;
         }
     }
 </style>

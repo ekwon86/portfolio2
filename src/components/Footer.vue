@@ -89,4 +89,18 @@
             font-size: 12px;
         }
     }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        #footer .overlay {
+            padding: 12px;
+            background-color: rgba(0,0,0,1);
+        }
+        .contact-icons {
+            font-size: 35px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
 </style>

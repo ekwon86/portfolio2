@@ -137,4 +137,11 @@
             display: none;
         }
     }
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        #navbar {
+            display: none;
+        }
+    }
 </style>

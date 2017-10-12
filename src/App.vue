@@ -85,4 +85,12 @@ export default {
             font-size: 3em;
         }
     }
+
+
+    /*MOBILE VIEW - LANDSCAPE*/
+    @media (min-width: 481px) and (max-width: 767px) {
+        .headings {
+            font-size: 3em;
+        }
+    }
 </style>
