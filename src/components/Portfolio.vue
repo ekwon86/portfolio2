@@ -42,7 +42,7 @@
                             <div class="project-info-name-container">
                                 <h3 class="project-info-modal-name">
                                   {{ modal.projectName }}
-                                  <img src="../assets/lfz.png" alt="lfz" v-if="modal.ifLFZ">
+                                  <img src="../assets/lfz.png" alt="lfz" class="lfz-logo" v-if="modal.isLFZ"/>
                                 </h3>
                             </div>
                             <div class="project-info-tech-container">
@@ -84,7 +84,7 @@
                         github: 'https://github.com/ekwon86/genkiyaki',
                         url: 'http://www.houseofgenkiyaki.com/',
                         desc: 'This is a custom website for a client that I built primarily using the Angular 4 framework. I utilized the Angular CLI to perform a variety of functions such as creating components and services, running a development environment, and bundling the application for deployment. Lastly, I utilized Heroku and the Heroku CLI to deploy the application.',
-                        ifLFZ: false,
+                        isLFZ: false,
                         techsUsed: [
                             { lang: 'Angular', icon: 'angularjs-plain' },
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
@@ -101,7 +101,7 @@
                         github: 'https://github.com/ekwon86/portfolio2',
                         url: '',
                         desc: 'My web portolio was created from scratch using the VueJS library. I utilized the Vue CLI to develop this portfolio on a local development environment and also to bundle and deploy it once finished.',
-                        ifLFZ: false,
+                        isLFZ: false,
                         techsUsed: [
                             { lang: 'Vue', icon: 'vuejs-plain colored'},
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
@@ -118,7 +118,7 @@
                         github: '',
                         url: 'http://www.laserapp.com/conference2017/',
                         desc: 'This conference site was created primarily using Wordpress and a variety of plugins. I also embedded snippets of raw HTML, CSS, and Javascript to give the site further styling, structure, and functionality.',
-                        ifLFZ: false,
+                        isLFZ: false,
                         techsUsed: [
                           { lang: 'Wordpress', icon: 'wordpress-plain colored' },
                           { lang: 'Javascript', icon: 'javascript-plain colored'},
@@ -134,7 +134,7 @@
                         github: 'https://github.com/ekwon86/whatsforlunch',
                         url: 'http://www.eugenekwon.com/projects/whatsforlunch',
                         desc: 'This is an application that I developed with several other developers while attending the LearningFuze programming bootcamp program. I assumed the role of a Front-End Developer and was responsible for the layout, design, and animations. The application makes an AJAX call to the Foursquare API and retrieves all restaurants within a 5 mile radius of the user.',
-                        ifLFZ: true,
+                        isLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -150,7 +150,7 @@
                         github: 'https://github.com/ekwon86/tictactoe',
                         url: 'http://www.eugenekwon.com/projects/tictactoe',
                         desc: 'This is an application that I developed in tandem with two other developers while attending the LearningFuze programming bootcamp program. I assumed the role of a Front-End Developer and handled most of the design and layout of the game, as well as contributing to various auxiliary functions required to play the game.',
-                        ifLFZ: true,
+                        isLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -166,7 +166,7 @@
                         github: 'https://github.com/ekwon86/calculator',
                         url: 'http://www.eugenekwon.com/projects/calculator',
                         desc: 'This is an application that I developed independently while attending the LearningFuze programming bootcamp program primarily utilizing Javascript and jQuery to handle the calculations.',
-                        ifLFZ: true,
+                        isLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -182,7 +182,7 @@
                         url: 'http://www.eugenekwon.com/projects/megamatchman',
                         github: 'https://github.com/ekwon86/mega_match_man',
                         desc: 'This is an application that I developed independently while attending the LearningFuze programming bootcamp program primarily utilizing Javascript to handle the game logic.',
-                        ifLFZ: true,
+                        isLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -425,6 +425,11 @@
         }
     }
 
+    .lfz-logo {
+        width: 200px;
+        margin-left: 20px;
+    }
+
     /*TRANSITIONS*/
     .slide-fade-top-enter-active {
         transition: all .3s ease;
@@ -459,7 +464,7 @@
     @media (min-width: 320px) and (max-width: 480px) {
         #Portfolio {
             padding: 5% 10%;
-            height: 1050px;
+            height: 1200px;
         }
         .indiv-project-subcontainers {
             width: 100%;
@@ -472,13 +477,39 @@
         .project-icons {
             font-size: 25px;
         }
+        .project-info {
+            width: 100vw;
+            height: 100vh;
+        }
+        .project-info-picture-holder {
+            height: 40%;
+            padding: 10px;
+        }
+        .project-info-info-holder {
+            height: 60%;
+            padding: 15px 10px;
+        }
+        .exit-icon {
+            font-size: 50px !important;
+        }
+        .project-info-modal-name {
+            font-size: 30px !important;
+        }
+        .skill-icons {
+            font-size: 24px !important;
+            margin-left: 8px !important
+        }
+        .project-info-desc-container .project-description {
+            font-size: 14px;
+        }
+
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
     @media (min-width: 481px) and (max-width: 767px) {
         #Portfolio {
             padding: 5% 10%;
-            height: 650px;
+            height: 775px;
         }
         .indiv-project-subcontainers {
             width: 50%;
@@ -490,6 +521,31 @@
         }
         .project-icons {
             font-size: 25px;
+        }
+        .project-info {
+            width: 100vw;
+            height: 100vh;
+        }
+        .project-info-picture-holder {
+            height: 40%;
+            padding: 10px;
+        }
+        .project-info-info-holder {
+            height: 60%;
+            padding: 15px 10px;
+        }
+        .exit-icon {
+            font-size: 50px !important;
+        }
+        .project-info-modal-name {
+            font-size: 30px !important;
+        }
+        .skill-icons {
+            font-size: 24px !important;
+            margin-left: 8px !important
+        }
+        .project-info-desc-container .project-description {
+            font-size: 14px;
         }
     }
 </style>
