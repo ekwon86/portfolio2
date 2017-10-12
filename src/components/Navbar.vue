@@ -144,4 +144,14 @@
             display: none;
         }
     }
+
+    /*LAPTOPS*/
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        #navbar .left-navbar {
+            width: 35%;
+        }
+        #navbar .right-navbar {
+            width: 65%;
+        }
+    }
 </style>
