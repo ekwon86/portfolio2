@@ -14,7 +14,7 @@
                             </transition>
                             <transition name="slide-fade-bottom">
                                 <div v-if="project.showContents" class="project-contents-bottom">
-                                    <a :href="project.github" target="_blank">
+                                    <a :href="project.github" target="_blank" v-if="project.github">
                                         <i class="fa fa-github fa-2x project-icons" aria-hidden="true"></i>
                                     </a>
                                     <i class="fa fa-info-circle fa-2x project-icons" aria-hidden="true" v-on:click="displayModal(index)"></i>
@@ -30,16 +30,20 @@
             </div>
           </div>
         </div>
+        <!-- PROJECT MODAL START -->
         <transition name="fade">
             <div id="project-modal-overlay" v-if="showProjectModal">
                 <div class="project-info">
-                    <div class="project-info-picture-holder">
+                    <div class="project-info-picture-holder" v-bind:style="{ 'background-image': 'url(/dist/' + modal.projectPicPath + '.jpg)' }">
                         <i class="fa fa-times-circle exit-icon" aria-hidden="true" v-on:click="closeModal()"></i>
                     </div>
                     <div class="project-info-info-holder">
                         <div class="project-info-name-and-tech-holder">
                             <div class="project-info-name-container">
-                                <h3 class="project-info-modal-name">{{ modal.projectName }}</h3>
+                                <h3 class="project-info-modal-name">
+                                  {{ modal.projectName }}
+                                  <img src="../assets/lfz.png" alt="lfz" v-if="modal.ifLFZ">
+                                </h3>
                             </div>
                             <div class="project-info-tech-container">
                                 <div class="project-info-tech-icon-container">
@@ -50,12 +54,13 @@
                             </div>
                         </div>
                         <div class="project-info-desc-container">
-                            <h1 style="font-size: 18px; color: black">test</h1>
+                            <p class="project-description">{{ modal.projectDescription }}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </transition>
+        <!-- PROJECT MODAL END -->
     </div>
 </template>
 
@@ -67,7 +72,10 @@
                 modal: {
                     projectName: '',
                     projectImgPath: '',
-                    projectTechsUsed: []
+                    projectTechsUsed: [],
+                    projectPicPath: '',
+                    projectDescription: '',
+                    isLFZ: false
                 },
                 projects: [
                     {
@@ -75,7 +83,8 @@
                         id: 'genkiyaki',
                         github: 'https://github.com/ekwon86/genkiyaki',
                         url: 'http://www.houseofgenkiyaki.com/',
-                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        desc: 'This is a custom website for a client that I built primarily using the Angular 4 framework. I utilized the Angular CLI to perform a variety of functions such as creating components and services, running a development environment, and bundling the application for deployment. Lastly, I utilized Heroku and the Heroku CLI to deploy the application.',
+                        ifLFZ: false,
                         techsUsed: [
                             { lang: 'Angular', icon: 'angularjs-plain' },
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
@@ -91,10 +100,12 @@
                         id: 'portfolio',
                         github: 'https://github.com/ekwon86/portfolio2',
                         url: '#',
-                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        desc: 'My web portolio was created from scratch using the VueJS library. I utilized the Vue CLI to develop this portfolio on a local development environment and also to bundle and deploy it once finished.',
+                        ifLFZ: false,
                         techsUsed: [
                             { lang: 'Vue', icon: 'vuejs-plain colored'},
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
+                            { lang: 'Sass', icon: 'sass-original colored' },
                             { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
                             { lang: 'HTML', icon: 'html5-plain' },
                             { lang: 'CSS', icon: 'css3-plain colored'}
@@ -102,11 +113,28 @@
                         showContents: false
                     },
                     {
-                        name: 'Mega Match Man',
-                        id: 'megamatchman',
-                        url: 'http://www.eugenekwon.com/projects/megamatchman',
-                        github: 'https://github.com/ekwon86/mega_match_man',
-                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        name: 'Conference Page',
+                        id: 'wordpress',
+                        github: '',
+                        url: 'http://www.laserapp.com/conference2017/',
+                        desc: 'This conference site was created primarily using Wordpress and a variety of plugins. I also embedded snippets of raw HTML, CSS, and Javascript to give the site further styling, structure, and functionality.',
+                        ifLFZ: false,
+                        techsUsed: [
+                          { lang: 'Wordpress', icon: 'wordpress-plain colored' },
+                          { lang: 'Javascript', icon: 'javascript-plain colored'},
+                          { lang: 'Bootstrap', icon: 'bootstrap-plain colored'},
+                          { lang: 'HTML', icon: 'html5-plain' },
+                          { lang: 'CSS', icon: 'css3-plain colored'}
+                        ],
+                        showContents: false
+                    },
+                    {
+                        name: 'Tic-Tac-Toe',
+                        id: 'tictactoe',
+                        github: 'https://github.com/ekwon86/tictactoe',
+                        url: 'http://www.eugenekwon.com/projects/tictactoe',
+                        desc: 'This is an application that I developed in tandem with two other developers while attending the LearningFuze programming bootcamp program. I assumed the role of a Front-End Developer and handled most of the design and layout of the game, as well as contributing to various auxiliary functions required to play the game.',
+                        ifLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -121,7 +149,8 @@
                         id: 'calculator',
                         github: 'https://github.com/ekwon86/calculator',
                         url: 'http://www.eugenekwon.com/projects/calculator',
-                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        desc: 'This is an application that I developed independently while attending the LearningFuze programming bootcamp program primarily utilizing Javascript and jQuery to handle the calculations.',
+                        ifLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -132,11 +161,12 @@
                         showContents: false
                     },
                     {
-                        name: 'Tic-Tac-Toe',
-                        id: 'tictactoe',
-                        github: 'https://github.com/ekwon86/tictactoe',
-                        url: 'http://www.eugenekwon.com/projects/iwant',
-                        desc: 'This is a custom website for a client that I built primarily using the Angular framework.',
+                        name: 'Mega Match Man',
+                        id: 'megamatchman',
+                        url: 'http://www.eugenekwon.com/projects/megamatchman',
+                        github: 'https://github.com/ekwon86/mega_match_man',
+                        desc: 'This is an application that I developed independently while attending the LearningFuze programming bootcamp program primarily utilizing Javascript to handle the game logic.',
+                        ifLFZ: true,
                         techsUsed: [
                             { lang: 'Javascript', icon: 'javascript-plain colored'},
                             { lang: 'jQuery', icon: 'jquery-plain colored' },
@@ -160,11 +190,17 @@
                 this.showProjectModal = true;
                 this.modal.projectName = this.projects[index].name;
                 this.modal.projectTechsUsed = this.projects[index].techsUsed;
+                this.modal.projectPicPath = this.projects[index].id;
+                this.modal.projectDescription = this.projects[index].desc;
+                this.modal.isLFZ = this.projects[index].isLFZ;
             },
             closeModal() {
                 this.showProjectModal = false;
                 this.modal.projectName = '';
-                this.modal.projectTechsUsed = []
+                this.modal.projectTechsUsed = [];
+                this.modal.projectPicPath = '';
+                this.modal.projectDescription = '';
+                this.modal.isLFZ = false;
             }
         }
     }
@@ -215,11 +251,14 @@
         #portfolio {
             background: url(../assets/portfolio.jpg);
         }
+        #wordpress {
+            background: url('../assets/wordpress.jpg');
+        }
     }
     .indiv-project-img-holder {
         height: 100%;
         width: 100%;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         position: relative;
         overflow: hidden;
     }
@@ -301,17 +340,27 @@
         background-position: center center;
         .exit-icon {
             font-size: 80px;
-            color: rgba(0,0,0,0.5);
-            transition: 0.2s;
+            color: white;
+            transition: 0.1s;
             &:hover {
                 cursor: pointer;
-                color: white;
+                color: #ff4444;
+            }
+            &:active {
+                color: #CC0000;
             }
         }
     }
+    .project-info-desc-container {
+      text-align: left;
+      .project-description {
+        font-size: 20px;
+        color: #444444;
+      }
+    }
+
     .project-info-info-holder {
         height: 40%;
-        border-top: 1px solid rgba(0,0,0,0.3);
         padding: 15px 30px;
         position: relative;
         .project-info-name-and-tech-holder {
@@ -321,9 +370,6 @@
             position: relative;
             margin-bottom: 15px;
             border-bottom: 1px solid rgba(0,0,0,0.3);
-            .project-info-desc-container {
-                text-align: left;
-            }
             .project-info-name-container {
                 width: 50%;
                 height: 100%;

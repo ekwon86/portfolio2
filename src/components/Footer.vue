@@ -1,7 +1,6 @@
 <template>
     <div id="footer">
         <div class="overlay">
-            <img src="../assets/logo.png" alt="eklogo" class="footer-logo">
             <div class="icon-holder">
                 <a href="https://www.github.com/ekwon86" target="_blank">
                     <i class="fa fa-2x fa-github contact-icons" aria-hidden="true"></i>
