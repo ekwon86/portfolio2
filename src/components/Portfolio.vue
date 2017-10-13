@@ -484,7 +484,7 @@
     @media (min-width: 320px) and (max-width: 480px) {
         #Portfolio {
             padding: 5% 10%;
-            height: 1200px;
+            height: 1400px;
         }
         .indiv-project-subcontainers {
             width: 100%;
@@ -526,7 +526,7 @@
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 481px) and (max-width: 800px) {
         #Portfolio {
             padding: 5% 10%;
             height: 775px;

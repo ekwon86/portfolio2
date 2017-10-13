@@ -14,7 +14,7 @@
                 <a href="mailto:ekwon86@gmail.com" target="_blank">
                     <i class="fa fa-2x fa-envelope contact-icons" aria-hidden="true"></i>
                 </a>
-                <a href="../assets/eugenekwon_resume.pdf" download>
+                <a href="../EugeneKwonResume.pdf" target="_blank">
                     <i class="fa fa-2x fa-file-pdf-o contact-icons" aria-hidden="true"></i>
                 </a>
             </div>
@@ -57,7 +57,7 @@
             position: relative;
             width: 100%;
             background-color: rgba(53, 53, 53, 0.3);
-            padding: 50px;
+            padding: 25px;
             .footer-logo {
                 height: 50px;
             }
@@ -93,7 +93,7 @@
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 481px) and (max-width: 800px) {
         #footer .overlay {
             padding: 12px;
             background-color: rgba(0,0,0,1);

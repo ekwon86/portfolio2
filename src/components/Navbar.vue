@@ -139,7 +139,7 @@
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 481px) and (max-width: 800px) {
         #navbar {
             display: none;
         }

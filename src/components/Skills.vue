@@ -289,7 +289,7 @@
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 481px) and (max-width: 800px) {
         .skills-section .overlay {
             padding: 5% 10%;
         }

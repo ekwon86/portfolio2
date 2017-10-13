@@ -182,7 +182,7 @@ export default {
     }
 
     /*MOBILE VIEW - LANDSCAPE*/
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media (min-width: 481px) and (max-width: 800px) {
         .content-a {
             background: #000000;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
